@@ -7,7 +7,13 @@
       <% @todos.each do |t|%>
         <div class="card">
           <div class="card-body">
-            <%= t %>
+            <%= t.description %>
+            <h4>Completed:</h4>
+            <% if t.completed %>
+              "Yes"
+              <% else %>
+              "No"
+            <% end %>
           </div>
         </div>
       <% end %>
