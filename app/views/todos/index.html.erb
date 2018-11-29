@@ -1,21 +1,16 @@
-<div class="row mt-5">
-  <div class="col-md-4">
-    <%= link_to "New 'To Do' Element", todos_new_path, class: "btn btn-info" %>
-  </div>
-  <div class="col-md-8">
-    <h3>To Do List:</h3>
-      <% @todos.each do |t|%>
-        <div class="card">
-          <div class="card-body">
+<div class="col-md-4">
+  <%= link_to "New 'To Do' Element", todos_new_path, class: "btn btn-info" %>
+</div>
+<div class="col-md-8">
+  <h3>To Do List:</h3>
+    <% @todos.each do |t|%>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
             <%= t.description %>
-            <h4>Completed:</h4>
-            <% if t.completed %>
-              "Yes"
-              <% else %>
-              "No"
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-  </div>
+            <%= link_to "Show", todo_path, class:'btn btn-primary' %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
 </div>
